@@ -24,7 +24,7 @@ SECRET_KEY = 'wr)09_2qj@l(!zwjxzr4lw7w-$ncnop&71@p4ps3w!yl(o5j$9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['leagueoflegendsapplication.herokuapp.com']
 
 # Application definition
 
