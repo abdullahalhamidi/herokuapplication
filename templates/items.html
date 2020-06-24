@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="item-row row justify-content-around">
+        {% for item in itemsdata %}
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <div class="card" style="width: 12rem;">
+                        <img alt="item details" class="item-images card-img-top" src="{% static 'itemImages/'|add:item.itemImageCol %}">
+                        <div class="item-body card-body">
+                            <h5 class="item-title card-title">{{item.itemNameCol}}</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <table>
+                                    <td class="alert alert-primary">Price:</td>
+                                    <td class="alert-price alert alert-danger"><strong>{{item.itemPriceCol}}</strong></td>
+                                </table>
+                            </li>
+                            <li class="list-group-item">
+                                <table>
+                                    <td class="alert alert-primary">Sell Price:</td>
+                                    <td class="alert-sell alert alert-success"><strong>{{item.itemSellCol}}</strong></td>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

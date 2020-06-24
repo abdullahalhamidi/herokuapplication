@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="champion-row row">
+        {% for champion in championsdata %}
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <div class="card">
+                        <img alt="champions details" class="card-img-top" src="{% static 'championImages/'|add:champion.idCol|add:'_0.jpg' %}">
+                        <div class="champion-body card-body">
+                            <h5 class="card-title">{{champion.nameCol}}</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item item-one">
+                                <table>
+                                    <td class="alert alert-primary">Attack Damage:</td>
+                                    <td class="alert alert-danger"><strong>{{champion.attackdamageCol}}<strong></td>
+                                </table>
+                            </li>
+                            <li class="list-group-item">
+                                <table>
+                                    <td class="alert alert-primary">Health:</td>
+                                    <td class="alert alert-success"><strong>{{champion.hpCol}}</strong></td>
+                                </table>
+                            </li>
+                            <li class="list-group-item">
+                                <table>
+                                    <td class="alert alert-primary">Attack Range:</td>
+                                    <td class="alert alert-warning"><strong>{{champion.attackrangeCol}}</strong></td>
+                                </table>
+                            </li>
+                            <li class="list-group-item">
+                                <table>
+                                    <td class="alert alert-primary">Difficulty:</td>
+                                    <td class="alert alert-info"><strong>{{champion.difficultyCol}}</strong></td>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
